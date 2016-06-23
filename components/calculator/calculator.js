@@ -9,7 +9,10 @@ ccm.component( {
     config: {
 
         //html:  [ ccm.store, { local: './tsconfig.json' } ],
-        style: [ ccm.load, 'style.css' ]
+        key: 'test',
+        store: [ccm.store, {url:'https://github.com/daSmok3r/calchat/blob/master/dataset/data.json',store:'term'}],
+        user: [ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js'],
+        style: [ ccm.load, './style.css' ]
 
     },
 
@@ -158,6 +161,21 @@ ccm.component( {
                 if(num2>0){
                     var erg = parseInt(num1) + parseInt(num2);
                     display.html(erg);
+
+                    self.store.get(self.key, function(dataset){
+                        if(dataset ===null){
+                            self.store.set({key: self.key , calculation: []});
+                        }
+
+                        if(erg === '')return
+
+                        self.user.login(function () {
+                            dataset.calculation.push({user: self.user.data().key,  term: erg});
+                            self.store.set(dataset, function(){self.render();});
+                        });
+                        return false;
+                    });
+
                     reset();
                 }
             });

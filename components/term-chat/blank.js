@@ -11,7 +11,7 @@ ccm.component( {
 
             var element = ccm.helper.element( this );
 
-            element.html( 'Hello, World!' );
+            element.html( 'Hello Blank Galaxy' );
 
             if ( callback ) callback();
 
