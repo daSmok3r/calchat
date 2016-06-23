@@ -1,0 +1,33 @@
+.display {
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #dadada;
+    position: relative;
+    width: 150px;
+    height: 30px;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 10px 0;
+    text-align: right;
+    vertical-align: middle
+}
+
+button{
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: 0px;
+    outline : none;
+    -moz-outline : none;
+    color: white;
+    font-size: 16px;
+}
+
+.btn_number{
+    background-color: #e84d31;
+}
+
+.btn_action{
+    background-color: #1b57a6;
+}
