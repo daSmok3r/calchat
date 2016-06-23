@@ -4,10 +4,13 @@ ccm.component({
 
 
     config:{
-        html:  [ ccm.store, { local: 'tamplete.json' } ],
+
+       // html:  [ ccm.store, { local: 'tamplete.json' } ],
         key:'test',
         store: [ ccm.store, {url:'https://github.com/daSmok3r/calchat/blob/master/dataset/data.json',store:'term'}],
-        //user:  [ ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js' ]
+        user:  [ ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js' ],
+        style: [ ccm.load, './style.css' ]
+
     },
 
     Instance: function () {

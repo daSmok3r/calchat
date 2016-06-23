@@ -1,0 +1,25 @@
+.ccm-term > .calculation {
+
+    display: table;
+    padding: 0.5em;
+
+}
+
+.ccm-term > .calculation > div {
+
+    display: table-row;
+
+}
+
+.ccm-term > .calculation > div > div {
+
+    display: table-cell;
+
+}
+
+.ccm-term > .calculation > .calculation > .name:after {
+
+    content: ':';
+    padding-right: 0.5em;
+
+}
