@@ -5,6 +5,10 @@ ccm.component({
 
     name: 'loader',
 
+    config:{
+        html: [ccm.store, {local:'template.json'}]
+    },
+
     Instance: function(){
         this.render = function(){
             var element = ccm.helper.element(this);
