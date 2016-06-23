@@ -1,0 +1,22 @@
+{
+  "main": {
+    "tag": "div",
+    "class": "calculation"
+  },
+  "calculation": {
+    "tag": "div",
+    "class": "calculation",
+    "inner": [
+      {
+        "tag": "div",
+        "class": "name",
+        "inner": "%name%"
+      },
+      {
+        "tag": "div",
+        "class": "term",
+        "inner": "%text%"
+      }
+    ]
+  }
+}

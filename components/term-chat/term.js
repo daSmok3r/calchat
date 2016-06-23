@@ -1,10 +1,13 @@
 ccm.component({
-    name:'chat',
+
+    name:'term',
+
 
     config:{
+        html:  [ ccm.store, { local: 'tamplete.json' } ],
         key:'test',
-        store: [ccm.store,{local:'../../dataset/data.json',store:'term'}],
-        user:  [ ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js' ]
+        store: [ ccm.store, {url:'https://github.com/daSmok3r/calchat/blob/master/dataset/data.json',store:'term'}],
+        //user:  [ ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js' ]
     },
 
     Instance: function () {
