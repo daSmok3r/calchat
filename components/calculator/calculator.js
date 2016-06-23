@@ -8,7 +8,7 @@ ccm.component( {
 
     config: {
 
-        html:  [ ccm.store, { local: './tsconfig.json' } ],
+        //html:  [ ccm.store, { local: './tsconfig.json' } ],
         style: [ ccm.load, 'style.css' ]
 
     },
@@ -28,8 +28,7 @@ ccm.component( {
             var num1='', num2='', erg='';
             var element = ccm.helper.element(self);
 
-            //element.html('<div class="container"><div class="display">0</div><div class="buttons"><div class="row_0"><button class="btn_action reset">AC</button></div><div class="row_1"><button class="btn_number seven">7</button><button class="btn_number eight">8</button><button class="btn_number nine">9</button></div><div class="row_2"><button class="btn_number four">4</button><button class="btn_number five">5</button><button class="btn_number six">6</button></div><div class="row_3"><button class="btn_number one">1</button><button class="btn_number two">2</button><button class="btn_number three">3</button></div><div class="row_4"><button class="btn_number zero">0</button><button class="btn_action plus">+</button><button class="btn_action ergebnis">=</button></div></div></div>');
-            //element.html(structure.html);
+            element.html('<div class="container"><div class="display">0</div><div class="buttons"><div class="row_0"><button class="btn_action reset">AC</button></div><div class="row_1"><button class="btn_number seven">7</button><button class="btn_number eight">8</button><button class="btn_number nine">9</button></div><div class="row_2"><button class="btn_number four">4</button><button class="btn_number five">5</button><button class="btn_number six">6</button></div><div class="row_3"><button class="btn_number one">1</button><button class="btn_number two">2</button><button class="btn_number three">3</button></div><div class="row_4"><button class="btn_number zero">0</button><button class="btn_action plus">+</button><button class="btn_action ergebnis">=</button></div></div></div>');
 
             //Hilfsvariablen erstellen
             var display =  $( "div.display" );
