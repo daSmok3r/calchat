@@ -1,0 +1,21 @@
+{
+  "test":{
+    "key":"test",
+    "calculation":[
+      {
+        "term":"2+2=4",
+        "name":"bot"
+      },
+      {
+
+        "term":"5+5=10",
+        "name":"bot"
+      }
+      {
+
+        "term":"10+5=15",
+        "name":"bot"
+      }
+    ]
+  }
+}

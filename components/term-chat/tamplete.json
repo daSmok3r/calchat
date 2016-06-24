@@ -16,7 +16,7 @@
       {
         "tag": "div",
         "class": "term",
-        "inner": "%text%"
+        "inner": "%term%"
       }
     ]
   }

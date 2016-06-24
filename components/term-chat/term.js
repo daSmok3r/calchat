@@ -6,7 +6,7 @@ ccm.component({
 
         html:  [ ccm.store, { local: 'tamplete.json' } ],
         key:'test',
-        store: [ ccm.store, '../../dataset/data.json'],
+        store: [ ccm.store,'data.json'],
         user:  [ ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js' ],
         style: [ ccm.load, './style.css' ]
 
