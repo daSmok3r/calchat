@@ -2,12 +2,11 @@ ccm.component({
 
     name:'term',
 
-
     config:{
 
-       // html:  [ ccm.store, { local: 'tamplete.json' } ],
+        html:  [ ccm.store, { local: 'tamplete.json' } ],
         key:'test',
-        store: [ ccm.store, {url:'https://github.com/daSmok3r/calchat/blob/master/dataset/data.json',store:'term'}],
+        store: [ ccm.store, '../../dataset/data.json'],
         user:  [ ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js' ],
         style: [ ccm.load, './style.css' ]
 
@@ -17,34 +16,39 @@ ccm.component({
 
         var self = this;
 
+
         self.init = function ( callback ) {
 
-            self.store.onChange = function () { self.render(); };
 
+          self.store.onChange = function () { self.render(); };
             callback();
 
-        };
+       };
+
+
 
         self.render = function ( callback ) {
 
-            var element = ccm.helper.element( self );
+           var element = ccm.helper.element( self );
+
 
             self.store.get( self.key, function ( dataset ) {
+                console.log(dataset);
 
-                if ( dataset === null )
+               if ( dataset === null )
                     self.store.set( { key: self.key, calculation: [] }, proceed );
                 else
-                    proceed( dataset );
+                   proceed( dataset);
 
-                function proceed( dataset ) {
+               function proceed( dataset ) {
 
-                    element.html( ccm.helper.html( self.html.get( 'main' ) ) );
+                   element.html( ccm.helper.html( self.html.get( 'main' ) ) );
 
                     var calculation_div = ccm.helper.find( self, '.calculation' );
 
-                    for ( var i = 0; i < dataset.calculation.length; i++ ) {
+                   for ( var i = 0; i < dataset.calculation.length; i++ ) {
 
-                        var calculation = dataset.calculation[ i ];
+                       var calculation = dataset.calculation[ i ];
 
                         calculation_div.append( ccm.helper.html( self.html.get( 'calculation' ), {
 
@@ -53,11 +57,13 @@ ccm.component({
 
                         } ) );
 
+
                     }
-                    
+
                 }
 
-            } );
+           } );
+
 
         };
 
