@@ -6,7 +6,7 @@ ccm.component({
     name: 'loader',
 
     config:{
-        instance_a: [ccm.instance, './components/calculator/blank.js'],
+        instance_a: [ccm.instance, './components/term-chat/blank.js'],
         //instance_a: [ccm.instance, './components/calculator/calculator.js'],
         //instance_b: [ccm.instance, './components/term-chat/blank.js']
         instance_b: [ccm.instance, './components/term-chat/term.js']
@@ -19,11 +19,11 @@ ccm.component({
 
         self.init = function(callback) {
 
-            this.instance_a = onterm = function (erg) {
+            this.instance_a.onterm = function (erg) {
                 ccm.helper.find(this.instance_b, 'input').attr('value',erg);
             };
 
-            this.instance_a.element = ccm.helper.find(this, '.a');
+            this.instance_a.element = ccm.helper.find(this, '.a')
             this.instance_b.element = ccm.helper.find(this, '.b');
 
             callback();
