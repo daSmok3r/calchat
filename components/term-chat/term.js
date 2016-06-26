@@ -26,7 +26,6 @@ ccm.component({
        };
 
 
-
         self.render = function ( callback ) {
 
            var element = ccm.helper.element( self );
@@ -57,16 +56,34 @@ ccm.component({
 
                         } ) );
 
+                   }
 
-                    }
+                   calculation_div.append( ccm.helper.html( self.html.get( 'input' ), { onsubmit: function () {
 
-                }
+                    var value = ccm.helper.val( ccm.helper.find( self, 'input' ).val() ).trim();
 
-           } );
+                    if ( value === '' ) return;
 
+                    self.user.login( function () {
 
-        };
+                        dataset.calculation.push( { user: self.user.data().key, term: value } );
 
-    }
+                        self.store.set( dataset, function () { self.render(); } );
+
+                    } );
+
+                    return false;
+
+                } } ) );
+
+                if ( callback ) callback();
+
+            }
+
+        } );
+
+};
+
+}
 
 } );

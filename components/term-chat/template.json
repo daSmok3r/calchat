@@ -19,5 +19,36 @@
         "inner": "%term%"
       }
     ]
+  },
+  "input": {
+    "tag": "div",
+    "class": "new_message",
+    "inner": [
+      {
+        "tag": "div",
+        "class": "name"
+      },
+      {
+        "tag": "div",
+        "class": "term",
+        "inner": {
+          "tag": "form",
+          "inner": [
+            {
+              "tag": "input",
+              "class": "input",
+              "placeholder": "Enter message here..."
+            },
+            {
+              "tag": "input",
+              "class": "button",
+              "type": "submit",
+              "value": "Send"
+            }
+          ],
+          "onsubmit": "%onsubmit%"
+        }
+      }
+    ]
   }
 }
