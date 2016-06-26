@@ -12,8 +12,7 @@ ccm.component( {
         key: 'test',
         store: [ccm.store],
         user: [ccm.instance, 'https://kaul.inf.h-brs.de/ccm/components/user2.js'],
-        style: [ ccm.load, './components/calculator/style.css' ],
-
+        style: [ ccm.load, './components/calculator/style.css' ]
     },
 
     Instance: function () {
@@ -29,6 +28,9 @@ ccm.component( {
         self.render = function ( callback ) {
             var operator = false;
             var num1='', num2='', erg='';
+            var onterm = function () {
+                console.log('calculator.js 33: onterm funktion wurde nicht ersetzt');
+            };
             var element = ccm.helper.element(self);
 
             element.html('<div class="container"><div class="display">0</div><div class="buttons"><div class="row_0"><button class="btn_action reset">AC</button></div><div class="row_1"><button class="btn_number seven">7</button><button class="btn_number eight">8</button><button class="btn_number nine">9</button></div><div class="row_2"><button class="btn_number four">4</button><button class="btn_number five">5</button><button class="btn_number six">6</button></div><div class="row_3"><button class="btn_number one">1</button><button class="btn_number two">2</button><button class="btn_number three">3</button></div><div class="row_4"><button class="btn_number zero">0</button><button class="btn_action plus">+</button><button class="btn_action ergebnis">=</button></div></div></div>');
@@ -161,7 +163,7 @@ ccm.component( {
                 if(num2>0){
                     var erg = parseInt(num1) + parseInt(num2);
                     display.html(erg);
-                    if(self.onterm)self.onterm(erg);
+                    if(self.onterm)self.onterm(num1 + '+' + num2 + '=' + erg);
                     reset();
                 }
             });
