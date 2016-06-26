@@ -26,6 +26,7 @@ ccm.component({
        };
 
 
+
         self.render = function ( callback ) {
 
            var element = ccm.helper.element( self );
@@ -56,7 +57,7 @@ ccm.component({
 
                         } ) );
 
-                   }
+                }
 
                    calculation_div.append( ccm.helper.html( self.html.get( 'input' ), { onsubmit: function () {
 
@@ -66,7 +67,7 @@ ccm.component({
 
                     self.user.login( function () {
 
-                        dataset.calculation.push( { user: self.user.data().key, term: value } );
+                        dataset.calculation.push( { name: self.user.data().key, term: value } );
 
                         self.store.set( dataset, function () { self.render(); } );
 
