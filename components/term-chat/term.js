@@ -57,6 +57,7 @@ ccm.component({
 
                         } ) );
 
+                       
                 }
 
                    calculation_div.append( ccm.helper.html( self.html.get( 'input' ), { onsubmit: function () {

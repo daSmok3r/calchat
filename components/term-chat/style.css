@@ -1,20 +1,43 @@
 .ccm-term > .calculation {
 
     display: table;
-    padding: 0.5em;
-
+    border-radius: 25px 25px 25px 25px;
+    margin-top: 15px;
+    text-align: center;
 }
 
-.ccm-term > .calculation > div {
-
-    display: table-row;
-
+.calculation{
+    margin-top: 15px;
 }
 
-.ccm-term > .calculation > div > div {
+.calculation .term{
+    background:lightblue;
+    border-radius:0 0 15px 15px
+}
 
-    display: table-cell;
+.calculation .name{
+    background:lightblue;
+    border-radius:15px 15px 0 0
+}
 
+
+
+.button {
+
+    border-radius: 15px 15px 15px 15px;
+    background-color: #FFFFFF;
+}
+
+.input{
+
+    border-radius: 15px 15px 15px 15px;
+    background-color: #FFFFFF;
+}
+
+.ccm-term > .calculation > .new_message{
+
+    background-color: #FFFFFF;
+    margin-top: 15px;
 }
 
 .ccm-term > .calculation > .calculation > .name:after {
@@ -23,3 +46,5 @@
     padding-right: 0.5em;
 
 }
+
+
